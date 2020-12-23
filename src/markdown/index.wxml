@@ -1,0 +1,44 @@
+
+<view class="markdown-body mobile">
+  <template is="tags" data="{{...nodes}}" />
+</view>
+
+<template name="tags">
+  <block wx:for="{{children}}" wx:for-item="node">
+    <template is="tag" data="{{node}}" />
+  </block>
+</template>
+
+<template name="tag">
+  <!-- <view wx:if="{{node.tagName == 'pre'}}" class="copybtn" catchtap="copyCode" data-codeIndex="{{node.codeIndex}}"><image src="../../../image/copybtn.svg" width="15px" height="15px" mode="aspectFill" /></view> -->
+  <!-- <view class="{{node.tagName || node.type}}" catchtap="{{node.tagName == 'a' ? 'onLinkClick' : ''}}" data-url="{{node.properties.href}}"> -->
+  <view class="{{node.tagName || node.type}}">
+    <block wx:if="{{!node.children || !node.children.length}}">
+      <view wx:if="{{node.tagName == 'img'}}" class="image-box">
+        <image src="{{node.properties.src}}" alt="{{node.properties.alt}}" width="100%" height="100%" mode="aspectFit" bindtap="imagePreview" data-src="{{node.properties.src}}" />
+      </view>
+      <block wx:elif="{{node.type == 'text'}}">
+        {{ node.value }}
+      </block>
+      <text selectable class="hr" wx:elif="{{node.tagName == 'hr'}}"></text>
+      <text selectable class="br" wx:elif="{{node.tagName == 'br'}}"></text>
+    </block>
+    <block wx:else>
+        <template wx:if="{{node.tagName == 'code'}}" is="codes" data="{{...node}}" />
+        <template wx:else is="tags" data="{{...node}}" />
+    </block>
+  </view>
+</template>
+
+<template name="codes">
+  <block wx:for="{{children}}" wx:for-item="node">
+    <view wx:if="{{node.children}}" class="{{node.properties.className[0]}} span">
+      <template is="codes" data="{{...node}}" />
+    </view>
+    <template wx:else is="code" data="{{node}}" />
+  </block>
+</template>
+
+<template name="code">
+  <view class="span">{{node.value}}</view>
+</template>

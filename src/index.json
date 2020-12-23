@@ -9,6 +9,7 @@
     "sticky": "./sticky/index",
     "select-text": "./select-text/index",
     "col": "./col/index",
-    "row": "./row/index"
+    "row": "./row/index",
+    "markdown": "./markdown/index"
   }
 }

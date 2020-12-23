@@ -8,7 +8,8 @@
     "example/vtabs/vtabs",
     "example/sticky/sticky",
     "example/select-text/select-text",
-    "example/grid/grid"
+    "example/grid/grid",
+    "example/markdown/markdown"
   ],
   "window": {
     "navigationBarTextStyle": "black",

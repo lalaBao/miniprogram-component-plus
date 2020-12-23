@@ -1,14 +1,18 @@
+<block wx:if="{{pnode}}" >
+    <template is="tags" data="{{...pnode}}" />
+</block>
+<block wx:else>
+  <view class="markdown-body">
+    <template is="tags" data="{{...nodes}}" />
+  </view>
+</block>
 
-<view class="markdown-body mobile">
-  <template is="tags" data="{{...nodes}}" />
-</view>
 
 <template name="tags">
   <block wx:for="{{children}}" wx:for-item="node">
     <template is="tag" data="{{node}}" />
   </block>
 </template>
-
 <template name="tag">
   <!-- <view wx:if="{{node.tagName == 'pre'}}" class="copybtn" catchtap="copyCode" data-codeIndex="{{node.codeIndex}}"><image src="../../../image/copybtn.svg" width="15px" height="15px" mode="aspectFill" /></view> -->
   <!-- <view class="{{node.tagName || node.type}}" catchtap="{{node.tagName == 'a' ? 'onLinkClick' : ''}}" data-url="{{node.properties.href}}"> -->
@@ -25,7 +29,7 @@
     </block>
     <block wx:else>
         <template wx:if="{{node.tagName == 'code'}}" is="codes" data="{{...node}}" />
-        <template wx:else is="tags" data="{{...node}}" />
+        <recursion-node wx:else pnode="{{node}}" />
     </block>
   </view>
 </template>

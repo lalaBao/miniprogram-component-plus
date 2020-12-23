@@ -4,7 +4,7 @@ Page({
   },
 
   onLoad() {
-    const markdown = '##h2'
+    const markdown = '## h2'
     this.setData({markdown})
   }
 })

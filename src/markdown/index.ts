@@ -1,6 +1,7 @@
 const { getProcessor } = require("./libs/bytemd.min.js");
 const gfm = require("./libs/gfm.min.js");
 const highlight = require("./libs/highlight.min.js");
+const md = require("./demo.md");
 const processor = getProcessor({
   plugins: [
     gfm(),
@@ -16,13 +17,15 @@ Component({
       type: String,
       value: '',
       observer: function (newval, oldval) {
-        this.getMDNodes(newval)
+        console.log('✨newval: ', newval);
+        this.getMDNodes(md)
       },
-    }
+    }, 
+    pnode: null,
   },
   data: {
     // 组件内部数据
-    nodes: {}
+    nodes: {},
   },
   lifetimes: {
     created: function () {
@@ -53,15 +56,15 @@ Component({
             if (parentNode.tagName !== "code" && parentNode.tagName !== "span") {
               // 换行全部干掉
               text = text.replace(/(\r?\n)+|(\r)+/g, "");
-              // 空格切词
-              const wordWithSignArr = text.split(" ");
-              const wordArr = wordWithSignArr.map(word => {
-                const newWord = word.replace(/(\W+$|^\W+)/g, " $1 ");
-                const wordWithoutSignArr = newWord.split(" ");
-                return wordWithoutSignArr;
-              });
-              console.log("wordArr: ", wordArr);
-              element.value = wordArr;
+              // // 空格切词
+              // const wordWithSignArr = text.split(" ");
+              // const wordArr = wordWithSignArr.map(word => {
+              //   const newWord = word.replace(/(\W+$|^\W+)/g, " $1 ");
+              //   const wordWithoutSignArr = newWord.split(" ");
+              //   return wordWithoutSignArr;
+              // });
+              // console.log("wordArr: ", wordArr);
+              // element.value = wordArr;
             } else {
               element.value = text;
             }

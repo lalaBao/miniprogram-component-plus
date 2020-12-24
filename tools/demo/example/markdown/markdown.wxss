@@ -1,1 +1,4 @@
-@import '../common.wxss';
+.markdown-wrap {
+    width: 100%;
+    padding: 10px;
+}

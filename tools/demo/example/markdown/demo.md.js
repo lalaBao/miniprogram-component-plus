@@ -1,32 +1,36 @@
 module.exports = `
-# h1 Heading
+# h1 Heading  
 ## h2 Heading
 ### h3 Heading
 #### h4 Heading
 ##### h5 Heading
 ###### h6 Heading
 
-** 粗体 **
-* 斜体 *
-~~删除线~~
-> 这里是引用
-****
+**bold text**.<br>
+*Italic text*
+~~Delete line~~
+> Quoted text
+***
+
 这里分界线中间的内容
-****
+
+***
 
 无序列表
-* 实心1
-* 实心2
-* 实心3
-	* 子项
+- First item
+- Second item
+- Third item
+    - Indented item
+    - Indented item
+- Fourth item
 
 有序列表
-1. 项目1
-2. 项目2
-3. 项目3
-    1. 项目1
-    2. 项目2
-    3. 项目3
+1. First item
+2. Second item
+3. Third item
+    1. Indented item
+    2. Indented item
+4. Fourth item
 
 图片
 ![小狗狗](https://avatars2.githubusercontent.com/u/26648209?v=4&s=400&u=4108ba0a850f9f390a449b40629651a8e31d05cd '我喜欢的狗狗')
@@ -45,19 +49,16 @@ module.exports = `
 \`\`\`
 
 \`\`\`javascript
-
-    for(var i = 0; i< 11; i++) {
-    	let j = i - 1;
-    }
-	const home = i18n.home;
+for(var i = 0; i< 11; i++) {
+  let j = i - 1;
+}
+const home = i18n.home;
 \`\`\`
 
 这是一段普通的文字，中间有一点\`代码\`。
-用两个空格换行
 多一行空行换行
 
 <br>br换行</br>
-An english fragment.
 
 一段长数字: 123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 

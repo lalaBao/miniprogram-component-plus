@@ -1,10 +1,11 @@
+const md = require("./demo.md");
 Page({
   data: {
     markdown: '#h1'
   },
 
   onLoad() {
-    const markdown = '## h2'
+    const markdown = md
     this.setData({markdown})
   }
 })

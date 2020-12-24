@@ -1,1 +1,3 @@
-<mp-markdown md="{{markdown}}"></mp-markdown>
+<view class="markdown-wrap">
+    <mp-markdown md="{{markdown}}"></mp-markdown>
+</view>

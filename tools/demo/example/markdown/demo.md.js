@@ -12,10 +12,6 @@ module.exports = `
 > Quoted text
 ***
 
-这里分界线中间的内容
-
-***
-
 无序列表
 - First item
 - Second item
@@ -41,7 +37,7 @@ module.exports = `
 \`\`\`html
 <html>
     <head>
-        <script src="main.js"></script>
+        <script src="main.min.js">hello world!</script>
     </head>
     <body>
     </body>
@@ -56,15 +52,14 @@ const home = i18n.home;
 \`\`\`
 
 这是一段普通的文字，中间有一点\`代码\`。
-多一行空行换行
 
-<br>br换行</br>
+换行</br>
 
 一段长数字: 123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
 
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
+| col 3 is      | right-aligned | $123456 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 

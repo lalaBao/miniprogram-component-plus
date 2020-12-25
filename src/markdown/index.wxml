@@ -11,7 +11,7 @@
 </block>
 
 <template name="tags">
-  <block wx:for="{{children}}" data-abc="{{noview}}" wx:for-item="node">
+  <block wx:for="{{children}}" wx:for-item="node">
     <template is="tag" data="{{node}}" />
   </block>
 </template>
@@ -23,18 +23,17 @@
   </view>
 </template>
 <template name="content">
-  <block wx:if="{{!node.children || !node.children.length}}">
-      <view wx:if="{{node.tagName == 'img'}}" class="image-box">
-        <image src="{{node.properties.src}}" alt="{{node.properties.alt}}" width="100%" height="100%" mode="aspectFit" bindtap="imagePreview" data-src="{{node.properties.src}}" />
-      </view>
+    <block wx:if="{{!node.children || !node.children.length}}">
+      <image wx:if="{{node.tagName == 'img'}}" src="{{node.properties.src}}" alt="{{node.properties.alt}}" mode="aspectFit" bindtap="imagePreview" data-src="{{node.properties.src}}" />
       <block wx:elif="{{node.type == 'text'}}">
         {{ node.value }}
       </block>
     </block>
     <block wx:else>
-        <view wx:if="{{node.tagName == 'code'}}" class="{{node.properties.className[0]}}">
+        <block wx:if="{{node.tagName == 'code'}}">
           <recursion-node code="{{node}}" />
-        </view>
+        </block>
+        <navigator wx:elif="{{node.tagName == 'a'}}" url="{{node.properties.href}}" >{{node.properties.title}}</navigator>
         <recursion-node  pnode="{{node}}"  wx:elif="{{node.tagName ==='tr'||node.tagName ==='td'||node.tagName ==='table'||node.tagName ==='th'||node.tagName ==='tbody'||node.tagName ==='thead'}}" class="{{node.tagName || node.type}}" />
         <recursion-node  pnode="{{node}}" wx:else />
     </block>

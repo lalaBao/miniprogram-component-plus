@@ -80,16 +80,10 @@ Component({
         dataset: { src }
       }
     }) {
-      // tt.previewImage({
-      //   urls: [src],
-      //   current: src,
-      //   success(res) {
-      //     console.log(`previewImage 调用成功`);
-      //   },
-      //   fail(res) {
-      //     console.log(`previewImage 调用失败`);
-      //   }
-      // });
+      wx.previewImage({
+        current: src, // 当前显示图片的http链接
+        urls: [src] // 需要预览的图片http链接列表
+      })
     }
   }
 });

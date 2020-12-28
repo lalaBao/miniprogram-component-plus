@@ -20,21 +20,6 @@
 		"miniprogram": {
 			"current": -1,
 			"list": [
-				{
-					"id": -1,
-					"name": "example/video-swiper/video-swiper",
-					"pathName": "example/video-swiper/video-swiper"
-				},
-				{
-					"id": -2,
-					"name": "example/emoji/emoji",
-					"pathName": "example/emoji/emoji"
-				},
-				{
-					"id": -3,
-					"name": "example/index-list/index-list",
-					"pathName": "example/index-list/index-list"
-				}
 			]
 		}
 	}

@@ -29,10 +29,9 @@ Ordered list
 4. Fourth item
 
 image
-![juejin](https://sf6-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg 'I like juejin')
+![juejin](https://sf6-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg 'I love juejin')
 
-[a link](/example/emoji/emoji "Link in WeChat Mini Program")
-[一个链接](/example/emoji/emoji "小程序内链接")
+[a link](/example/markdown/markdown "Link in WeChat Mini Program")
 
 \`\`\`html
 <html>

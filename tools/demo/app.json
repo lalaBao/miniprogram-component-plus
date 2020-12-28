@@ -1,15 +1,6 @@
 {
   "pages": [
-    "example/markdown/markdown",
-    "example/index",
-    "example/video-swiper/video-swiper",
-    "example/emoji/emoji",
-    "example/index-list/index-list",
-    "example/tabs/tabs",
-    "example/vtabs/vtabs",
-    "example/sticky/sticky",
-    "example/select-text/select-text",
-    "example/grid/grid"
+    "example/markdown/markdown"
   ],
   "usingComponents": {
     "recursion-node": "components/markdown/index"
